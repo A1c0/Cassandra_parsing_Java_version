@@ -11,11 +11,25 @@ import com.datastax.driver.core.BoundStatement;
 public class Parsing {
     // Application settings
     private static String server_ip = "127.0.0.1";
-    private static String keyspace = "sampledb";
+    private static String keyspace = "databio";
 
     // Application connection objects
     private static Cluster cluster = null;
     private static Session session = null;
+
+    public Parsing(){
+        openConnection();
+
+        // Step05. Execute a query to list the actual rows
+
+        String query1 = "SELECT * FROM databio.habitat ;";
+
+        executeQuery(query1);
+
+        closeConnection();
+
+
+    }
 
 
     public static void openConnection() {
@@ -67,6 +81,6 @@ public class Parsing {
     }
 
     public static void main(String[] args) {
-
+        Parsing pTest = new Parsing();
     }
 }
