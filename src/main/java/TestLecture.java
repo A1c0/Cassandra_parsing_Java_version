@@ -7,6 +7,7 @@ public class TestLecture {
     public static void main(String[] args) throws FileNotFoundException {
 
         ArrayList<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
+        ArrayList<String> Requete_prete = new ArrayList<String>();
 
 
         Scanner scan = new Scanner(new File("donnee.txt"));
@@ -42,11 +43,11 @@ public class TestLecture {
             line++;
             System.out.println();
         }
+        System.out.println("===== requeste =====");
         for (ArrayList<String> als : data) {
-            System.out.println("===== requeste =====");
-            for (String s : als) {
-                System.out.println(s);
-            }
+            //requete pour l'habitat
+            String requete = "INSERT INTO habitat(id, milieu, typeH, photo, localisation) VALUES(uuid(), '" + als.get(0) + "', '" + als.get(1) + "', '" + als.get(2) + "', '" + als.get(3) + " " + als.get(4) + " " + als.get(5) + " " + als.get(6)+"');";
+            System.out.println(requete);
         }
     }
 }
