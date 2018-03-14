@@ -21,13 +21,13 @@ public class Parsing {
 
     public Parsing() throws FileNotFoundException {
         openConnection();
-        executeQuery("use databio;");
+        executeStatement("use " + keyspace + ";");
         ReadData rd1 = new ReadData("donnee.txt");
+        int i = 1;
         for (String query : rd1.getQueriesPrepared()) {
-            executeQuery(query);
-            System.out.println("coucou");
+            executeStatement(query);
+            System.out.println("Query " + i++ + " DONE");
         }
-
         closeConnection();
     }
 
