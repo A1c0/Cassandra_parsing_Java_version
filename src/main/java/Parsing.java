@@ -8,6 +8,8 @@ import com.datastax.driver.core.Row;
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.BoundStatement;
 
+import java.io.FileNotFoundException;
+
 public class Parsing {
     // Application settings
     private static String server_ip = "127.0.0.1";
@@ -17,18 +19,16 @@ public class Parsing {
     private static Cluster cluster = null;
     private static Session session = null;
 
-    public Parsing(){
+    public Parsing() throws FileNotFoundException {
         openConnection();
-
-        // Step05. Execute a query to list the actual rows
-
-        String query1 = "SELECT * FROM databio.habitat ;";
-
-        executeQuery(query1);
+        executeQuery("use databio;");
+        ReadData rd1 = new ReadData("donnee.txt");
+        for (String query : rd1.getQueriesPrepared()) {
+            executeQuery(query);
+            System.out.println("coucou");
+        }
 
         closeConnection();
-
-
     }
 
 
@@ -80,7 +80,7 @@ public class Parsing {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Parsing pTest = new Parsing();
     }
 }
