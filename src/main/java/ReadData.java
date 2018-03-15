@@ -49,16 +49,16 @@ public class ReadData {
                     date = data.get(iterator + 1).substring(1, 5) + "-" + data.get(iterator + 1).substring(5, 7) + "-" + data.get(iterator + 1).substring(7, 9);
                     heure = data.get(iterator + 1).substring(9, 11) + ":" + data.get(iterator + 1).substring(11, 13) + ":" + data.get(iterator + 1).substring(13, 15);
                     if (data.get(iterator + 1).charAt(0) == 'i') { //GESTIONS DES ELEMENTS INVASIFS
-                        requete = "INSERT INTO element_invasif (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
-                                + data.get(iterator) + "', '" + data.get(iterator + 1) + "', " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
-                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
-                        queriesPrepared.add(requete);
-                    }
-                    if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
-                        requete = "INSERT INTO element_remarcable (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
+                        requete = "INSERT INTO element_invasif (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
                                 + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", '" + milieu + "', '" + typeHab + "', '" + data.get(iterator) + "', '" + data.get(iterator + 1) + "', "
                                 + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", " + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date
                                 + "', '" + heure + "');";
+                        queriesPrepared.add(requete);
+                    }
+                    if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
+                        requete = "INSERT INTO element_remarcable (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
+                                + data.get(iterator) + "', '" + data.get(iterator + 1) + "', " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
+                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
                     if (data.get(iterator + 1).charAt(0) == 'E') { // GESTIONS DES ESPECES REMARCABLES
@@ -71,6 +71,13 @@ public class ReadData {
                 }
             }
             line++;
+        }
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        ReadData rd = new ReadData("donnee.txt");
+        for (String s : rd.getQueriesPrepared()) {
+            System.out.println(s);
         }
     }
 
@@ -89,14 +96,5 @@ public class ReadData {
     public static String uuid(){
         return generate4HEX() + generate4HEX() + "-" + generate4HEX()
                 + "-" + generate4HEX() + "-" + generate4HEX() + "-" + generate4HEX() + generate4HEX() + generate4HEX();
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        ReadData rd1 = new ReadData("donnee.txt");
-        int i = 0;
-        for (String s : rd1.getQueriesPrepared()) {
-            System.out.println("requete " + i + ": " + s);
-            i++;
-        }
     }
 }
