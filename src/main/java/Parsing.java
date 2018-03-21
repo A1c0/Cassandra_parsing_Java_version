@@ -16,14 +16,14 @@ public class Parsing {
     private static Cluster cluster = null;
     private static Session session = null;
 
-    public Parsing() throws FileNotFoundException {
+    public Parsing(String pathname) throws FileNotFoundException {
         openConnection();
-        executeStatement("use " + keyspace + ";");
-        ReadData rd1 = new ReadData("donnee.txt");
+        ReadData rd1 = new ReadData(pathname);
         int i = 1;
         for (String query : rd1.getQueriesPrepared()) {
             executeStatement(query);
-            System.out.println("Query " + i++ + " DONE");
+            System.out.println("Query " + i++ + "/" + rd1.getQueriesPrepared().size()
+                    + " DONE");
         }
         closeConnection();
     }
@@ -78,6 +78,6 @@ public class Parsing {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        Parsing pTest = new Parsing();
+        Parsing pTest = new Parsing("donnee.txt");
     }
 }
