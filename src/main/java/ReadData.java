@@ -9,13 +9,11 @@ public class ReadData {
     public ReadData(String pathname) throws FileNotFoundException {
 
         Scanner scan = new Scanner(new File(pathname));
-        int line = 0;
         while (scan.hasNextLine()) {
             String lines = scan.nextLine();
             if (lines.equals("")) {
                 continue; // permet de supprimer les lignes superflues
             }
-            int word = 0;
             Scanner scanString = new Scanner(lines);
             ArrayList<String> data = new ArrayList<String>();
             while (scanString.hasNext()) {
@@ -32,7 +30,6 @@ public class ReadData {
                     mots = mots.substring(1, mots.length() - 1);
                 }
                 data.add(mots);
-                word++;
             }
             // ===== CONSTRUCTION DE LA REQUETE A PARTIR DE LA DONNES =====
             {
@@ -42,8 +39,7 @@ public class ReadData {
                 String heure = data.get(2).substring(9, 11) + ":" + data.get(2).substring(11, 13) + ":" + data.get(2).substring(13, 15);
                 String milieu = data.get(0);
                 String typeHab = data.get(1);
-                String imagename = data.get(2);
-                System.out.println("imagename = " + imagename);
+                String imagename = "data\\" + data.get(2).substring(1);
                 imgManip.openJPG(imagename);
                 System.out.println("imgManip.getImageDataString() = " + imgManip.getImageDataString());
 
@@ -56,7 +52,7 @@ public class ReadData {
                 while (iterator < data.size()) {
                     date = data.get(iterator + 1).substring(1, 5) + "-" + data.get(iterator + 1).substring(5, 7) + "-" + data.get(iterator + 1).substring(7, 9);
                     heure = data.get(iterator + 1).substring(9, 11) + ":" + data.get(iterator + 1).substring(11, 13) + ":" + data.get(iterator + 1).substring(13, 15);
-                    imagename = data.get(iterator + 1);
+                    imagename = "data\\" + data.get(iterator + 1).substring(1);
                     imgManip.openJPG(imagename);
                     System.out.println("imagename = " + imagename);
                     if (data.get(iterator + 1).charAt(0) == 'i') { //GESTIONS DES ELEMENTS INVASIFS
@@ -78,10 +74,10 @@ public class ReadData {
                                 + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
+                    imgManip = new ImageManipulation();
                     iterator += 6;
                 }
             }
-            line++;
         }
     }
 
@@ -103,7 +99,7 @@ public class ReadData {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        ReadData rd = new ReadData("donnee.txt");
+        ReadData rd = new ReadData("data\\donnee.txt");
         for (String s : rd.getQueriesPrepared()) {
             System.out.println(s);
         }

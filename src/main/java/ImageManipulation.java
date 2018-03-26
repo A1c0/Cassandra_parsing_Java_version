@@ -7,13 +7,24 @@ import java.io.IOException;
 import org.apache.commons.codec.binary.Base64;
 
 public class ImageManipulation {
-    private byte[] imageByteArray;
-    private String imageDataString;
+    private byte[] imageByteArray; // data qui pourra être écrit directement dans un fichier .jpg
+    private String imageDataString; // texte inscrit comme un blob dans la base Cassandra
+
+
+    // ======================================================
+    // ==================== CONSTRUCTEUR ====================
+    // ======================================================
 
     public ImageManipulation(){
+        // création de l'objet en initialement à null les deux attributs
         imageByteArray = null;
         imageByteArray = null;
     }
+
+
+    // ======================================================
+    // =============== ASSESSEURS/ MUTATEURS ================
+    // ======================================================
 
     public byte[] getImageByteArray() {
         return imageByteArray;
@@ -33,21 +44,29 @@ public class ImageManipulation {
         imageByteArray = decodeImage(imageDataString);
     }
 
-    public void openJPG(String pathname){
-        File file = new File(pathname);
 
+    // ======================================================
+    // ====================== METHODES ======================
+    // ======================================================
+
+    private static String encodeImage(byte[] imageByteArray) {
+        return Base64.encodeBase64URLSafeString(imageByteArray);
+    } // Permet la conversion de Byte[] à String
+
+    private static byte[] decodeImage(String imageDataString) {
+        return Base64.decodeBase64(imageDataString);
+    } // Permet la conversion de String à Byte[]
+
+    public void openJPG(String pathname){
+        /*methode qui ouvre un fichier .jpg et met à jour les attributs */
+        File file = new File(pathname);
         try {
-            // Reading a Image file from file system
             FileInputStream imageInFile = new FileInputStream(file);
             byte imageData[] = new byte[(int) file.length()];
             imageInFile.read(imageData);
 
-            // Converting Image byte array into Base64 String
             imageDataString = encodeImage(imageData);
 
-            /*
-             * Converting a Base64 String into Image byte array
-             */
             imageByteArray = decodeImage(imageDataString);
 
             imageInFile.close();
@@ -60,7 +79,7 @@ public class ImageManipulation {
     }
 
     public void generateJPG(String pathname){
-
+        /*methodes qui permet de genererer à partir des attribut un fichier .jpg qui à pour nom le parametre de la methode*/
         try {
 
             FileOutputStream imageOutFile = new FileOutputStream(pathname);
@@ -78,22 +97,24 @@ public class ImageManipulation {
         }
     }
 
+
+    // ======================================================
+    // =============== MAIN/ TEST DE L'OBJET ================
+    // ======================================================
+
     public static void main(String[] args) {
 
-        String photo = "photo.jpg";
+        String photo = "data\\photo.jpg";
         ImageManipulation im = new ImageManipulation();
         im.openJPG(photo);
         String data = im.getImageDataString();
         System.out.println(data);
-        im.generateJPG("photo2.jpg");
+        im.generateJPG("data\\test.jpg");
+        photo = "data\\20180309151425.jpg";
+        im.openJPG(photo);
+        data = im.getImageDataString();
+        System.out.println(data);
+        im.generateJPG("data\\photoyolo.jpg");
 
-    }
-
-    private static String encodeImage(byte[] imageByteArray) {
-        return Base64.encodeBase64URLSafeString(imageByteArray);
-    }
-
-    private static byte[] decodeImage(String imageDataString) {
-        return Base64.decodeBase64(imageDataString);
     }
 }
