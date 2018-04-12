@@ -25,10 +25,10 @@ public class ReadData {
                 }
                 if (mots.charAt(mots.length() - 1) == ',') {
                     mots = mots.substring(0, mots.length() - 1);
-                }
+                }/*
                 if (mots.charAt(0) == '"') {
                     mots = mots.substring(1, mots.length() - 1);
-                }
+                }*/
                 data.add(mots);
             }
             // ===== CONSTRUCTION DE LA REQUETE A PARTIR DE LA DONNES =====
@@ -41,11 +41,10 @@ public class ReadData {
                 String typeHab = data.get(1);
                 String imagename = "data\\" + data.get(2).substring(1);
                 imgManip.openJPG(imagename);
-                System.out.println("imgManip.getImageDataString() = " + imgManip.getImageDataString());
 
                 String uuid = uuid();
                 String requete = "INSERT INTO habitat(id, milieu, typeHab, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr)"
-                        + " VALUES(" + uuid + ", '" + data.get(0) + "', '" + data.get(1) + "', textAsBlob('" + imgManip.getImageDataString() + "'), " + data.get(3) + ", " + data.get(4)
+                        + " VALUES(" + uuid + ", '" + data.get(0) + "', '" + data.get(1) + "', textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(3) + ", " + data.get(4)
                         + ", " + data.get(5) + ", " + data.get(6) + ", '" + date + "', '" + heure + "');";
                 queriesPrepared.add(requete);
                 int iterator = 7;
@@ -56,21 +55,21 @@ public class ReadData {
                     imgManip.openJPG(imagename);
                     System.out.println("imagename = " + imagename);
                     if (data.get(iterator + 1).charAt(0) == 'i') { //GESTIONS DES ELEMENTS INVASIFS
-                        requete = "INSERT INTO element_invasif (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
-                                + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", '" + milieu + "', '" + typeHab + "', '" + data.get(iterator) + "', textAsBlob('" + imgManip.getImageDataString() + "'), "
+                        requete = "INSERT INTO element_invasif (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
+                                + data.get(iterator) + "', textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
+                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
+                        queriesPrepared.add(requete);
+                    }
+                    if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
+                        requete = "INSERT INTO element_remarcable (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
+                                + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", '" + milieu + "', '" + typeHab + "', '" + data.get(iterator) + "', textAsBlob('\"" + imgManip.getImageDataString() + "\"'), "
                                 + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", " + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date
                                 + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
-                    if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
-                        requete = "INSERT INTO element_remarcable (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
-                                + data.get(iterator) + "', textAsBlob('" + imgManip.getImageDataString() + "'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
-                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
-                        queriesPrepared.add(requete);
-                    }
                     if (data.get(iterator + 1).charAt(0) == 'E') { // GESTIONS DES ESPECES REMARCABLES
                         requete = "INSERT INTO espece (id, nom_esp, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
-                                + data.get(iterator) + "', textAsBlob('" + imgManip.getImageDataString() + "'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
+                                + data.get(iterator) + "', textAsBlob('\"" + imgManip.getImageDataString() + "/\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
                                 + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
