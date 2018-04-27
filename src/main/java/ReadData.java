@@ -7,13 +7,21 @@ public class ReadData {
     private ArrayList<String> queriesPrepared = new ArrayList<String>();
 
     public ReadData(String pathname) throws FileNotFoundException {
+        File f = new File(pathname);
+        System.out.println(" ======== PARSING du fichier: " + f.getAbsolutePath() + " ======== ");
 
-        Scanner scan = new Scanner(new File(pathname));
+        String dataPath = f.getAbsolutePath().replace(f.getName(), "");
+
+        Scanner scan = new Scanner(f);
+        scan.nextLine();
+
         while (scan.hasNextLine()) {
             String lines = scan.nextLine();
-            if (lines.equals("")) {
+            if (lines.equals("") || lines.equals(" ")) {
                 continue; // permet de supprimer les lignes superflues
             }
+            //System.out.println("lines = " + lines);
+
             Scanner scanString = new Scanner(lines);
             ArrayList<String> data = new ArrayList<String>();
             while (scanString.hasNext()) {
@@ -25,10 +33,10 @@ public class ReadData {
                 }
                 if (mots.charAt(mots.length() - 1) == ',') {
                     mots = mots.substring(0, mots.length() - 1);
-                }/*
+                }
                 if (mots.charAt(0) == '"') {
                     mots = mots.substring(1, mots.length() - 1);
-                }*/
+                }
                 data.add(mots);
             }
             // ===== CONSTRUCTION DE LA REQUETE A PARTIR DE LA DONNES =====
@@ -39,40 +47,42 @@ public class ReadData {
                 String heure = data.get(2).substring(9, 11) + ":" + data.get(2).substring(11, 13) + ":" + data.get(2).substring(13, 15);
                 String milieu = data.get(0);
                 String typeHab = data.get(1);
-                String imagename = "data\\" + data.get(2).substring(1);
+                String imagename = dataPath + data.get(2).substring(1);
                 imgManip.openJPG(imagename);
 
                 String uuid = uuid();
                 String requete = "INSERT INTO habitat(id, milieu, typeHab, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr)"
-                        + " VALUES(" + uuid + ", '" + data.get(0) + "', '" + data.get(1) + "', textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(3) + ", " + data.get(4)
+                        + " VALUES(" + uuid + ", $$" + data.get(0) + "$$, $$" + data.get(1) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(3) + ", " + data.get(4)
                         + ", " + data.get(5) + ", " + data.get(6) + ", '" + date + "', '" + heure + "');";
                 queriesPrepared.add(requete);
+                //System.out.println("requete = " + requete);
                 int iterator = 7;
                 while (iterator < data.size()) {
                     date = data.get(iterator + 1).substring(1, 5) + "-" + data.get(iterator + 1).substring(5, 7) + "-" + data.get(iterator + 1).substring(7, 9);
                     heure = data.get(iterator + 1).substring(9, 11) + ":" + data.get(iterator + 1).substring(11, 13) + ":" + data.get(iterator + 1).substring(13, 15);
-                    imagename = "data\\" + data.get(iterator + 1).substring(1);
+                    imagename = dataPath + data.get(iterator + 1).substring(1);
                     imgManip.openJPG(imagename);
-                    System.out.println("imagename = " + imagename);
+                    //System.out.println("imagename = " + imagename);
                     if (data.get(iterator + 1).charAt(0) == 'i') { //GESTIONS DES ELEMENTS INVASIFS
-                        requete = "INSERT INTO element_invasif (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
-                                + data.get(iterator) + "', textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
+                        requete = "INSERT INTO element_invasif (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), $$"
+                                + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
                                 + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
                     if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
                         requete = "INSERT INTO element_remarcable (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
-                                + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", '" + milieu + "', '" + typeHab + "', '" + data.get(iterator) + "', textAsBlob('\"" + imgManip.getImageDataString() + "\"'), "
+                                + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", $$" + milieu + "$$, $$" + typeHab + "$$, $$" + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), "
                                 + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", " + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date
                                 + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
                     if (data.get(iterator + 1).charAt(0) == 'E') { // GESTIONS DES ESPECES REMARCABLES
-                        requete = "INSERT INTO espece (id, nom_esp, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), '"
-                                + data.get(iterator) + "', textAsBlob('\"" + imgManip.getImageDataString() + "/\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
+                        requete = "INSERT INTO espece (id, nom_esp, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), $$"
+                                + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "/\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
                                 + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
                         queriesPrepared.add(requete);
                     }
+                    //System.out.println("requete = " + requete);
                     imgManip = new ImageManipulation();
                     iterator += 6;
                 }
@@ -98,9 +108,11 @@ public class ReadData {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        ReadData rd = new ReadData("data\\donnee.txt");
+        ReadData rd = new ReadData("data/donnee.txt");
+        int i = 1;
         for (String s : rd.getQueriesPrepared()) {
-            System.out.println(s);
+            System.out.println(i + ": " + s);
+            i++;
         }
     }
 }
