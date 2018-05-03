@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ff7b8d1-c359-4c8c-be22-7e294aa803c5" name="Default" comment="">
+    <list default="true" id="5ff7b8d1-c359-4c8c-be22-7e294aa803c5" name="Default" comment="Correction de faute d'othorgraphe grave">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReadData.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="Parsing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Parsing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+            <state relative-caret-position="400">
+              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1992#1993#0" expanded="true" />
@@ -40,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="donnee2.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="donnee2.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data2/donnee2.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
@@ -52,7 +53,7 @@
       <file leaf-file-name="ImageManipulation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ImageManipulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-141">
+            <state relative-caret-position="1062">
               <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadData.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReadData.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ReadData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1293">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="450">
+              <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,8 +115,8 @@
         <option value="$PROJECT_DIR$/src/main/java/LectureImage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ImageManipulation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ReadData.java" />
         <option value="$PROJECT_DIR$/src/main/java/Parsing.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ReadData.java" />
       </list>
     </option>
   </component>
@@ -161,24 +162,14 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Cassandra_parsing_Java_version" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cassandra_parsing_Java_version" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cassandra_parsing_Java_version" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cassandra_parsing_Java_version" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cassandra_parsing_Java_version" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cassandra_parsing_Java_version" type="462c0819:PsiDirectoryNode" />
-              <item name="data2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -383,6 +374,8 @@
       <workItem from="1524829868939" duration="7140000" />
       <workItem from="1524848562355" duration="4768000" />
       <workItem from="1525248021119" duration="154000" />
+      <workItem from="1525330398955" duration="301000" />
+      <workItem from="1525331461729" duration="286000" />
     </task>
     <task id="LOCAL-00001" summary="Séparation des mots afin d'ecrire la requete">
       <created>1520784529250</created>
@@ -472,13 +465,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105385000" />
+    <option name="totallyTimeSpent" value="105972000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1920" height="1051" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32513967" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -487,10 +482,10 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4409534" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32960895" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1953125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20364416" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -504,7 +499,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32912844" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3261105" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,13 +520,14 @@
     <MESSAGE value="Ajout des images test" />
     <MESSAGE value="Ajout des images (qui ne sont pas bonnes) et Modification du ReadData pour l'integration des images." />
     <MESSAGE value="Correction de 'ReadData' pour inserer des &quot;'&quot; dans un varchar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de 'ReadData' pour inserer des &quot;'&quot; dans un varchar" />
+    <MESSAGE value="Correction de faute d'othorgraphe grave" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de faute d'othorgraphe grave" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Parsing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="81" column="49" lean-forward="true" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        <state relative-caret-position="1476">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1992#1993#0" expanded="true" />
@@ -809,19 +804,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ReadData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1293">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageManipulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
+        <state relative-caret-position="1062">
           <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -833,10 +818,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data2/donnee2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parsing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        <state relative-caret-position="400">
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1992#1993#0" expanded="true" />
@@ -847,10 +839,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data2/donnee2.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ReadData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="450">
+          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

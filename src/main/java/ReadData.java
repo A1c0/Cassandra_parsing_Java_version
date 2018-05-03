@@ -70,7 +70,7 @@ public class ReadData {
                         queriesPrepared.add(requete);
                     }
                     if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
-                        requete = "INSERT INTO element_remarcable (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
+                        requete = "INSERT INTO element_remarquable (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
                                 + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", $$" + milieu + "$$, $$" + typeHab + "$$, $$" + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), "
                                 + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", " + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date
                                 + "', '" + heure + "');";
