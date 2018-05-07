@@ -96,25 +96,4 @@ public class ImageManipulation {
             System.out.println("Exception while reading the Image " + ioe);
         }
     }
-
-
-    // ======================================================
-    // =============== MAIN/ TEST DE L'OBJET ================
-    // ======================================================
-
-    public static void main(String[] args) {
-
-        String photo = "data\\photo.jpg";
-        ImageManipulation im = new ImageManipulation();
-        im.openJPG(photo);
-        String data = im.getImageDataString();
-        System.out.println(data);
-        im.generateJPG("data\\test.jpg");
-        photo = "data\\20180309151425.jpg";
-        im.openJPG(photo);
-        data = im.getImageDataString();
-        System.out.println(data);
-        im.generateJPG("data\\photoyolo.jpg");
-
-    }
 }

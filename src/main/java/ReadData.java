@@ -51,9 +51,9 @@ public class ReadData {
                 imgManip.openJPG(imagename);
 
                 String uuid = uuid();
-                String requete = "INSERT INTO habitat(id, milieu, typeHab, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr)"
+                String requete = "INSERT INTO habitat(id, milieu, typeHab, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr, region)"
                         + " VALUES(" + uuid + ", $$" + data.get(0) + "$$, $$" + data.get(1) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(3) + ", " + data.get(4)
-                        + ", " + data.get(5) + ", " + data.get(6) + ", '" + date + "', '" + heure + "');";
+                        + ", " + data.get(5) + ", " + data.get(6) + ", '" + date + "', '" + heure + "', $$Île-de-France$$);";
                 queriesPrepared.add(requete);
                 //System.out.println("requete = " + requete);
                 int iterator = 7;
@@ -64,25 +64,24 @@ public class ReadData {
                     imgManip.openJPG(imagename);
                     //System.out.println("imagename = " + imagename);
                     if (data.get(iterator + 1).charAt(0) == 'i') { //GESTIONS DES ELEMENTS INVASIFS
-                        requete = "INSERT INTO element_invasif (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), $$"
+                        requete = "INSERT INTO element_invasif (id, type, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr, region) VALUES(uuid(), $$"
                                 + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
-                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
+                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "', $$Île-de-France$$);";
                         queriesPrepared.add(requete);
                     }
                     if (data.get(iterator + 1).charAt(0) == 'r') { // GESTIONS DES ELEMENTS REMARCABLE
                         requete = "INSERT INTO element_remarquable (id, idHab, nomMilieu, typeHab, type, photo, GPS_lat, GPS_long, GPS_lat_lam, "
-                                + "GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), " + uuid + ", $$" + milieu + "$$, $$" + typeHab + "$$, $$" + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), "
+                                + "GPS_long_lam, date_enr, heure_enr, region) VALUES(uuid(), " + uuid + ", $$" + milieu + "$$, $$" + typeHab + "$$, $$" + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "\"'), "
                                 + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", " + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date
-                                + "', '" + heure + "');";
+                                + "', '" + heure + "', $$Île-de-France$$);";
                         queriesPrepared.add(requete);
                     }
                     if (data.get(iterator + 1).charAt(0) == 'E') { // GESTIONS DES ESPECES REMARCABLES
-                        requete = "INSERT INTO espece (id, nom_esp, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr) VALUES(uuid(), $$"
+                        requete = "INSERT INTO espece (id, nom_esp, photo, GPS_lat, GPS_long, GPS_lat_lam, GPS_long_lam, date_enr, heure_enr, region) VALUES(uuid(), $$"
                                 + data.get(iterator) + "$$, textAsBlob('\"" + imgManip.getImageDataString() + "/\"'), " + data.get(iterator + 2) + ", " + data.get(iterator + 3) + ", "
-                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "');";
+                                + data.get(iterator + 4) + ", " + data.get(iterator + 5) + ", '" + date + "', '" + heure + "', $$Île-de-France$$);";
                         queriesPrepared.add(requete);
                     }
-                    //System.out.println("requete = " + requete);
                     imgManip = new ImageManipulation();
                     iterator += 6;
                 }
@@ -107,12 +106,4 @@ public class ReadData {
                 + "-" + generate4HEX() + "-" + generate4HEX() + "-" + generate4HEX() + generate4HEX() + generate4HEX();
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        ReadData rd = new ReadData("data/donnee.txt");
-        int i = 1;
-        for (String s : rd.getQueriesPrepared()) {
-            System.out.println(i + ": " + s);
-            i++;
-        }
-    }
 }

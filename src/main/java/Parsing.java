@@ -78,7 +78,15 @@ public class Parsing {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        Parsing pTest = new Parsing("data/donnee.txt");
-        pTest = new Parsing("data2/donnee2.txt");
+        Parsing pTest;
+        if (args.length == 0){
+            pTest = new Parsing("data/donnee.txt");
+            pTest = new Parsing("data2/donnee2.txt");
+        }
+        else {
+            for (String s: args) {
+                pTest = new Parsing(s);
+            }
+        }
     }
 }
