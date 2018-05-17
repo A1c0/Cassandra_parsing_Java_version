@@ -25,19 +25,19 @@ public class ReadData {
             Scanner scanString = new Scanner(lines);
             ArrayList<String> data = new ArrayList<String>();
             while (scanString.hasNext()) {
-                String mots = scanString.next();
-                if (mots.charAt(0) == '\"') {
-                    while (mots.charAt(mots.length() - 1) != '"' && mots.charAt(mots.length() - 2) != '"') {
-                        mots += " " + scanString.next();
+                String word = scanString.next();
+                if (word.charAt(0) == '\"') {
+                    while (word.charAt(word.length() - 1) != '"' && word.charAt(word.length() - 2) != '"') {
+                        word += " " + scanString.next();
                     }
                 }
-                if (mots.charAt(mots.length() - 1) == ',') {
-                    mots = mots.substring(0, mots.length() - 1);
+                if (word.charAt(word.length() - 1) == ',') {
+                    word = word.substring(0, word.length() - 1);
                 }
-                if (mots.charAt(0) == '"') {
-                    mots = mots.substring(1, mots.length() - 1);
+                if (word.charAt(0) == '"') {
+                    word = word.substring(1, word.length() - 1);
                 }
-                data.add(mots);
+                data.add(word);
             }
             // ===== CONSTRUCTION DE LA REQUETE A PARTIR DE LA DONNES =====
             {

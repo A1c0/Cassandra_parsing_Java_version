@@ -18,7 +18,7 @@ public class ImageManipulation {
     public ImageManipulation(){
         // création de l'objet en initialement à null les deux attributs
         imageByteArray = null;
-        imageByteArray = null;
+        imageDataString = null;
     }
 
 
