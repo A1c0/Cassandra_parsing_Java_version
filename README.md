@@ -1,13 +1,13 @@
-# Parseur Java pour base Cassandra
-lien de la base cassandra en rapport avec ce parseur : [cassandra - github][cassandra - github]
+# Java parser for Cassandra base
+cassandra base's link for this parser' : [cassandra - github][cassandra - github]
 
-##Composition du parseur
-
-le parseur suit la logique donnée par le diagrame UML suivant:
+## Parseur's composition
+The parser in java version witch follows the logic of the following UML diagram:
 ![UML](http://www.image-heberg.fr/files/15280285741702336688.jpg)
 
 This project was created to import easily our data in our cassandra base.
-##Usage
+
+## Usage
 to use this parser , you need to compile the *.java files. To do that, please write the following command lines :
 ```bash
 git clone https://github.com/alexConts/Cassandra_parsing_Java_version.git
