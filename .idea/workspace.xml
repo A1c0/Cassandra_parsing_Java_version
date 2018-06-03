@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ff7b8d1-c359-4c8c-be22-7e294aa803c5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageManipulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageManipulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageManipulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ReadData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ReadData.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,8 +59,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="90">
-                <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+              <first_editor relative-caret-position="72">
+                <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -396,7 +391,7 @@
       <workItem from="1526810396898" duration="66000" />
       <workItem from="1526928508068" duration="24000" />
       <workItem from="1528023980140" duration="40000" />
-      <workItem from="1528024065384" duration="2661000" />
+      <workItem from="1528024065384" duration="3774000" />
     </task>
     <task id="LOCAL-00001" summary="Séparation des mots afin d'ecrire la requete">
       <created>1520784529250</created>
@@ -503,11 +498,25 @@
       <option name="project" value="LOCAL" />
       <updated>1526534982720</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update README.md">
+      <created>1528028527898</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1528028527898</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update README.md">
+      <created>1528029526828</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1528029526828</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123550000" />
+    <option name="totallyTimeSpent" value="124663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,7 +613,8 @@
     <MESSAGE value="Correction de faute d'othorgraphe grave" />
     <MESSAGE value="Ajout des regions (toujours l'ile de france)" />
     <MESSAGE value="Suppression d'élements dans 'data' non pertinants" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suppression d'élements dans 'data' non pertinants" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Parsing.java">
@@ -865,8 +875,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+          <first_editor relative-caret-position="72">
+            <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           </first_editor>
           <second_editor />
         </state>
