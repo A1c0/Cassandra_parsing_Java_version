@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ff7b8d1-c359-4c8c-be22-7e294aa803c5" name="Default" comment="Ajout des regions (toujours l'ile de france)">
+    <list default="true" id="5ff7b8d1-c359-4c8c-be22-7e294aa803c5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/data.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/20180309151425.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/donnee.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/donnee.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/photo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/photo2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/photoyolo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ImageManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageManipulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ReadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReadData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ImageManipulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageManipulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Parsing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Parsing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ReadData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ReadData.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,16 +46,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageManipulation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImageManipulation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ImageManipulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="69" column="35" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
+            <state relative-caret-position="425">
+              <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1165#1166#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180312171956.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/20180312171956.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="20180312172032.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/20180312172032.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="donnee.txt" pinned="false" current-in-tab="false">
@@ -109,9 +128,10 @@
         <option value="$PROJECT_DIR$/src/main/java/LectureImage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Parsing.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ImageManipulation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ReadData.java" />
         <option value="$PROJECT_DIR$/data/donnee.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/ImageManipulation.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -132,10 +152,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="410" />
-    <option name="y" value="179" />
-    <option name="width" value="1030" />
-    <option name="height" value="611" />
+    <option name="y" value="-2" />
+    <option name="width" value="1280" />
+    <option name="height" value="1082" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -156,8 +175,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,11 +207,12 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="C:\Users\alexa\IdeaProjects\test2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alexa\IdeaProjects\test2\data" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alexa\IdeaProjects\test2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -293,8 +313,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Parsing" />
-        <item itemvalue="Application.ReadData" />
         <item itemvalue="Application.ImageManipulation (1)" />
+        <item itemvalue="Application.ReadData" />
         <item itemvalue="Application.ImageManipulation" />
         <item itemvalue="Application.LectureImage" />
       </list>
@@ -368,7 +388,15 @@
       <workItem from="1526321807509" duration="1231000" />
       <workItem from="1526325511540" duration="6000" />
       <workItem from="1526476568263" duration="1967000" />
-      <workItem from="1526534426429" duration="484000" />
+      <workItem from="1526534426429" duration="717000" />
+      <workItem from="1526568202860" duration="4387000" />
+      <workItem from="1526583720302" duration="351000" />
+      <workItem from="1526731001731" duration="18000" />
+      <workItem from="1526734525915" duration="356000" />
+      <workItem from="1526810396898" duration="66000" />
+      <workItem from="1526928508068" duration="24000" />
+      <workItem from="1528023980140" duration="40000" />
+      <workItem from="1528024065384" duration="2661000" />
     </task>
     <task id="LOCAL-00001" summary="Séparation des mots afin d'ecrire la requete">
       <created>1520784529250</created>
@@ -468,32 +496,47 @@
       <option name="project" value="LOCAL" />
       <updated>1525701003574</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Suppression d'élements dans 'data' non pertinants">
+      <created>1526534982720</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1526534982720</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115414000" />
+    <option name="totallyTimeSpent" value="123550000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1920" height="1051" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32513967" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32912844" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44022346" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43910614" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32960895" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22400858" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2550911" />
       <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32912844" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -502,10 +545,42 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3243968" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32912844" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32912844" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32960895" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550911" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43910614" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32960895" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32912844" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3243968" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -528,21 +603,10 @@
     <MESSAGE value="Correction de 'ReadData' pour inserer des &quot;'&quot; dans un varchar" />
     <MESSAGE value="Correction de faute d'othorgraphe grave" />
     <MESSAGE value="Ajout des regions (toujours l'ile de france)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des regions (toujours l'ile de france)" />
+    <MESSAGE value="Suppression d'élements dans 'data' non pertinants" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suppression d'élements dans 'data' non pertinants" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ReadData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="62" column="74" selection-start-line="62" selection-start-column="74" selection-end-line="62" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#159#167#0" expanded="true" />
-            <element signature="e#896#904#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parsing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -744,6 +808,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/photo.jpg" />
+    <entry file="file://$PROJECT_DIR$/data/20180309151425.jpg" />
+    <entry file="file://$PROJECT_DIR$/data/20180312171909.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ReadData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/20180224165115.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/donnee.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="238" selection-start-line="6" selection-start-column="238" selection-end-line="6" selection-end-column="238" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/20180312172032.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/20180312171956.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parsing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
@@ -758,50 +850,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/photo.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/20180312171956.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/20180309151425.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/20180312171909.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/20180312172032.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ReadData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#159#167#0" expanded="true" />
-            <element signature="e#896#904#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/20180224165115.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/donnee.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="238" selection-start-line="6" selection-start-column="238" selection-end-line="6" selection-end-column="238" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageManipulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="69" column="35" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
+        <state relative-caret-position="425">
+          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1165#1166#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -31,7 +31,7 @@ public class ImageManipulation {
     }
 
     public String getImageDataString() {
-        return imageDataString;
+        return imageDataString.replace("_", "/").replace("-", "+");
     }
 
     public void setImageByteArray(byte[] imageByteArray) {
@@ -95,5 +95,11 @@ public class ImageManipulation {
         catch (IOException ioe) {
             System.out.println("Exception while reading the Image " + ioe);
         }
+    }
+
+    public static void main(String[] args) {
+        ImageManipulation im = new ImageManipulation();
+        im.openJPG("data.jpg");
+        System.out.println(im.getImageDataString());
     }
 }
